@@ -4,5 +4,6 @@
     <a href="/welcome/contacts">contacts</a> |
     <a href="/welcome/mixtape">mixtapes</a> |
     <a href="/welcome/events">events</a> |
-    <a href="/welcome/posts">posts</a>
+    <a href="/welcome/posts">posts</a> |
+    <a href="/auth/logout">logout</a>
 </div>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 21, 2014 at 03:29 PM
+-- Generation Time: Jun 21, 2014 at 01:46 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -119,41 +119,6 @@ INSERT INTO `events` (`event_id`, `event_title`, `event_date`, `event_link`) VAL
 -- --------------------------------------------------------
 
 --
--- Table structure for table `groups`
---
-
-CREATE TABLE `groups` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(20) NOT NULL,
-  `description` varchar(100) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `groups`
---
-
-INSERT INTO `groups` (`id`, `name`, `description`) VALUES
-(1, 'admin', 'Administrator'),
-(2, 'members', 'General User');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `login_attempts`
---
-
-CREATE TABLE `login_attempts` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ip_address` varchar(15) NOT NULL,
-  `login` varchar(100) NOT NULL,
-  `time` int(11) unsigned DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `mixtapes`
 --
 
@@ -201,75 +166,6 @@ CREATE TABLE `releases` (
 INSERT INTO `releases` (`release_id`, `artist_id`, `release_title`, `bandcamp_link`, `bandcamp_album_link`, `itunes_link`, `description`, `art_url`, `release_date`) VALUES
 (1, 1, 'Dabo Beat Tape', '<iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album=2772926934/size=small/bgcol=333333/linkcol=0f91ff/artwork=none/transparent=true/" seamless><a href="http://rawtapes.bandcamp.com/album/stay-low">Stay Low by A7 + Guadaloop</a></iframe>', 'http://rawtapes.bandcamp.com/album/stay-low', 'http://www.google.com', 0x3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a09266e6273703b3c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a3c703e0a0953746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f77266e6273703b53746179204c6f773c2f703e0a, '1a962-staylow.jpg', '2009-03-06 12:00:00'),
 (2, 1, 'dabo beat tape two', '<iframe style="border: 0; width: 270px; height: 270px;" src="http://bandcamp.com/EmbeddedPlayer/album=837635269/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" seamless><a href="http://rawtapes.bandcamp.com/album/puzzles-vol-2">Puzzles Vol. 2 by Raw Tapes</a></iframe>', '', '', 0x3c703e0a0961736461736420617364616473266e6273703b61736461736420617364616473266e6273703b61736461736420617364616473266e6273703b61736461736420617364616473266e6273703b61736461736420617364616473266e6273703b617364617364206173646164733c2f703e0a, 'a81ba-staylow.jpg', '2011-04-05 08:35:24');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `ip_address` varchar(15) NOT NULL,
-  `username` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `salt` varchar(255) DEFAULT NULL,
-  `email` varchar(100) NOT NULL,
-  `activation_code` varchar(40) DEFAULT NULL,
-  `forgotten_password_code` varchar(40) DEFAULT NULL,
-  `forgotten_password_time` int(11) unsigned DEFAULT NULL,
-  `remember_code` varchar(40) DEFAULT NULL,
-  `created_on` int(11) unsigned NOT NULL,
-  `last_login` int(11) unsigned DEFAULT NULL,
-  `active` tinyint(1) unsigned DEFAULT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
-  `company` varchar(100) DEFAULT NULL,
-  `phone` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$07$SeBknntpZror9uyftVopmu61qg0ms8Qv1yV6FG.kQOSM.9QhmTo36', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1403357209, 1, 'Admin', 'istrator', 'ADMIN', '0');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users_groups`
---
-
-CREATE TABLE `users_groups` (
-  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) unsigned NOT NULL,
-  `group_id` mediumint(8) unsigned NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `uc_users_groups` (`user_id`,`group_id`),
-  KEY `fk_users_groups_users1_idx` (`user_id`),
-  KEY `fk_users_groups_groups1_idx` (`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `users_groups`
---
-
-INSERT INTO `users_groups` (`id`, `user_id`, `group_id`) VALUES
-(1, 1, 1),
-(2, 1, 2);
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `users_groups`
---
-ALTER TABLE `users_groups`
-  ADD CONSTRAINT `fk_users_groups_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_users_groups_groups1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -8,12 +8,13 @@ class Welcome extends CI_Controller {
     public $events;
     public $latest_mixtape;
     public $random_artist;
-    
+
     function __construct() {
         parent::__construct();
         /* Standard Libraries */
         $this->load->database();
         $this->load->helper('url');
+        $this->load->library('ion_auth');
         /* ------------------ */
         $this->load->library('grocery_CRUD');
     }
@@ -23,32 +24,45 @@ class Welcome extends CI_Controller {
     }
 
     function artists() {
-        $crud = new grocery_CRUD();
-        $crud->set_table('artists');
-        $crud->set_field_upload('header_text_url', 'assets/artists_header_text');
-        $crud->set_field_upload('profile_pic_url', 'assets/artists_pic');
-        $crud->set_field_upload('random_artist_pic', 'assets/random_artists_pic');
-        $output = $crud->render();
-        $this->_example_output($output);
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('artists');
+            $crud->set_field_upload('header_text_url', 'assets/artists_header_text');
+            $crud->set_field_upload('profile_pic_url', 'assets/artists_pic');
+            $crud->set_field_upload('random_artist_pic', 'assets/random_artists_pic');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
     }
 
     function posts() {
-        $crud = new grocery_CRUD();
-        $crud->set_table('blog_post');
-        $crud->columns('post_title', 'post_pic');
-        $crud->set_field_upload('post_pic', 'assets/post_pics');
-        $output = $crud->render();
-        $this->_example_output($output);
+
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('blog_post');
+            $crud->columns('post_title', 'post_pic');
+            $crud->set_field_upload('post_pic', 'assets/post_pics');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
     }
 
     function releases() {
-        $crud = new grocery_CRUD();
-        $crud->set_table('releases');
-        $crud->columns('release_title');
-        $crud->set_relation('artist_id', 'artists', 'name');
-        $crud->set_field_upload('art_url', 'assets/release_art');
-        $output = $crud->render();
-        $this->_example_output($output);
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('releases');
+            $crud->columns('release_title');
+            $crud->set_relation('artist_id', 'artists', 'name');
+            $crud->set_field_upload('art_url', 'assets/release_art');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
     }
 
     function release() {
@@ -101,26 +115,50 @@ class Welcome extends CI_Controller {
     }
 
     function contacts() {
-        $crud = new grocery_CRUD();
-        $crud->set_table('contacts');
-        $output = $crud->render();
-        $this->_example_output($output);
+
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('contacts');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
     }
 
     function events() {
-        $crud = new grocery_CRUD();
-        $crud->set_table('events');
-        $output = $crud->render();
-        $this->_example_output($output);
+
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('events');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
     }
 
     function mixtape() {
-        $crud = new grocery_CRUD();
-        $crud->set_table('mixtapes');
-        $crud->fields('mixtape_title', 'mixtape_description', 'mixtape_embed_link');
-        $crud->columns('mixtape_title', 'mixtape_description', 'time_added');
-        $output = $crud->render();
-        $this->_example_output($output);
+
+
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('mixtapes');
+            $crud->fields('mixtape_title', 'mixtape_description', 'mixtape_embed_link');
+            $crud->columns('mixtape_title', 'mixtape_description', 'time_added');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
+    }
+
+    function admin() {
+        if ($this->ion_auth->logged_in()) {
+            $this->load->view('example.php', array());
+        } else {
+            redirect('/');
+        }
     }
 
 }
