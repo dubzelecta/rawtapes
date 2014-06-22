@@ -50,5 +50,10 @@ class artists_Model extends CI_Model {
         }
         return false;
     }
+    
+    function getArtistLinks(){
+//        $this->db->select('artists');
+        $query = $this->db->get('artists');
+    }
 
 }

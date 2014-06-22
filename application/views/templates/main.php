@@ -58,14 +58,16 @@ if(isset($catalog_class)){echo $catalog_class;} ?>">
 					<strong class="title">upcoming events</strong>
 					<ul class="infos">
                                                 <?php foreach($this->events as $key => $value){
-                                                    $classActive = '';
-                                                        if($key % 2 == 0 && $key != 0){
-                                                        $classActive = 'class="active"';   
-                                                    }
+                                                    $classActive = 'class="active"';
+                                                    if((($key % 2) == 0)){
+                                                        $classActive = '';   
+                                                    }    
                                                     echo '  <li '.$classActive.'>
                                                             <time datetime="'.$value['event_date'].'">'.date("m/d",strtotime($value['event_date'])).'</time>
-                                                            <div class="info-holder"><span><a href="http://'.$value['event_link'].'">'.$value['event_title'].'</a></span></div>
-                                                            </li>';}
+                                                            <div class="info-holder"><div><a href="http://'.$value['event_link'].'">'.$value['event_title'].'</a></div></div>
+                                                            </li>';
+                                                    
+                                                            }
                                                 ?>
 					</ul>
 					<!--<a href="#" class="more">-More-</a>-->

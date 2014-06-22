@@ -398,7 +398,10 @@ figure {
 	text-align: left;
 	background: #000;
 }
-#sidebar .infos li { padding: 0 0 6px; }
+#sidebar .infos li { 
+        padding: 0 0 6px; 
+        height:36px;
+}
 #sidebar ul li.active {
 	padding: 0 0 8px;
 	font-size: 13px;

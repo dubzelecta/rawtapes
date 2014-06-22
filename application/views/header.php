@@ -11,9 +11,9 @@
 					</ul>
 				</nav>
 				<ul class="social-networks">
-					<li><a href="https://www.facebook.com/Raw.Tapes" class="facebook">facebook</a></li>
-					<li><a href="https://twitter.com/Raw_Tapes" class="twitter">twitter</a></li>
-					<li><a href="https://soundcloud.com/raw-tapes" class="ico"></a></li>
+					<li><a href="https://www.facebook.com/Raw.Tapes" target="_blank" class="facebook">facebook</a></li>
+					<li><a href="https://twitter.com/Raw_Tapes" target="_blank" class="twitter">twitter</a></li>
+					<li><a href="https://soundcloud.com/raw-tapes" target="_blank" class="ico"></a></li>
 				</ul>
 			</div>
 			<ul class="artist-list slide">

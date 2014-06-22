@@ -2,6 +2,8 @@
 
 class Auth extends CI_Controller {
 
+        public $artist_links;
+    
 	function __construct()
 	{
 		parent::__construct();
@@ -12,11 +14,13 @@ class Auth extends CI_Controller {
 		// Load MongoDB library instead of native db driver if required
 		$this->config->item('use_mongodb', 'ion_auth') ?
 		$this->load->library('mongo_db') :
-
+                    
 		$this->load->database();
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
-
+//                $this->load->model('artists_model');
+//                $this->artist_links = $this->artists_model->getArtistLinks();
+                
 		$this->lang->load('auth');
 		$this->load->helper('language');
 	}
