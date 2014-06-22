@@ -19,6 +19,8 @@
             <ul class="releases">
                 <?php
                 if(isset($artist_releases)){
+                    var_dump($artist_releases);
+                    die;
                 foreach ($artist_releases as $key => $artist_release) {
                     echo '<li><iframe style="border: 0; width: 270px; height: 270px;" 
                         src="http://bandcamp.com/EmbeddedPlayer/album='. $artist_release['bandcamp_link'] . '/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" 
