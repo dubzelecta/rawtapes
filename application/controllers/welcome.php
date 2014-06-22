@@ -8,6 +8,7 @@ class Welcome extends CI_Controller {
     public $events;
     public $latest_mixtape;
     public $random_artist;
+    public $artist_links;
 
     function __construct() {
         parent::__construct();
@@ -17,6 +18,9 @@ class Welcome extends CI_Controller {
         $this->load->library('ion_auth');
         /* ------------------ */
         $this->load->library('grocery_CRUD');
+
+        $this->load->model('artists_model');
+        $this->artist_links = $this->artists_model->getArtistLinks();
     }
 
     function _example_output($output = null) {
@@ -162,8 +166,6 @@ class Welcome extends CI_Controller {
     }
 
 }
-
-
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

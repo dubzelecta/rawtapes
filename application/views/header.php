@@ -17,8 +17,12 @@
 				</ul>
 			</div>
 			<ul class="artist-list slide">
-				<li><a href="#" class="beno">beno</a></li>
-				<li><a href="#" class="buttering">buttering trio</a></li>
+                            <?php foreach($this->artist_links as $key => $value){
+                                echo '<li><a href="#" ><img src="/assets/artists_header_text/'.$value['header_text_url'].'" /></a></li>';
+                            }
+                            ?>
+				
+<!--				<li><a href="#" class="buttering">buttering trio</a></li>
 				<li><a href="#" class="citizen">citizen kane</a></li>
 				<li><a href="#" class="cohenbeats">cohenbeats</a></li>
 				<li><a href="#" class="dubz">dubz</a></li>
@@ -33,6 +37,6 @@
 				<li class="remove-sep"><a href="#" class="plusga">plusga</a></li>
 				<li><a href="#" class="radixx">radixx</a></li>
 				<li><a href="#" class="rejoicer">rejoicer/guadloop</a></li>
-				<li class="remove-sep"><a href="#" class="sinez">sinez</a></li>
+				<li class="remove-sep"><a href="#" class="sinez">sinez</a></li>-->
 			</ul>
 		</header>
