@@ -52,7 +52,7 @@ class artists_Model extends CI_Model {
     }
     
     function getArtistLinks(){
-        $this->db->select('header_text_url');
+        $this->db->select(array('header_text_url','url'));
         $this->db->order_by("name", "desc");
         $query = $this->db->get('artists');
         $result = $query->result_array();
@@ -60,6 +60,19 @@ class artists_Model extends CI_Model {
             return $result;
         }
         return false;
+    }
+    
+    function getArtistIdByUrl($url){
+        $this->db->select('artist_id');
+        $this->db->from('artists');
+        $this->db->where('url', $url);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (!empty($result)) {
+            return $result[0]['artist_id'];
+        }
+        return false;
+        
     }
 
 }

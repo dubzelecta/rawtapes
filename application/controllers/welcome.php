@@ -99,8 +99,9 @@ class Welcome extends CI_Controller {
 
     function artist() {
         $this->load->model('artists_model');
-        $artist_id = end($this->uri->segment_array());
-        if (!is_numeric($artist_id)) {
+        $artist_url = mysql_real_escape_string(end($this->uri->segment_array()));
+        $artist_id = $this->artists_model->getArtistIdByUrl($artist_url);
+        if (!is_numeric($artist_id) && $artist_id) {
             redirect('/');
         }
         $artist = $this->artists_model->getArtist($artist_id);

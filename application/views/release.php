@@ -9,7 +9,7 @@
     </div>
     <div id="content">
         <h1><?php echo $data['release_title']; ?></h1>
-        <span class="ablum-info">By <a href="/welcome/artist/<?php echo $data['artist_id']; ?>"><?php echo $data['name']; ?></a></span>
+        <span class="ablum-info">By <a href="/welcome/artist/<?php echo $data['url']; ?>"><?php echo $data['name']; ?></a></span>
         <div class="play-area">
             <?php echo '<iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album='.$data['bandcamp_link'].'/size=small/bgcol=333333/linkcol=0f91ff/artwork=none/transparent=true/" seamless=""></iframe>'; ?>
         </div>

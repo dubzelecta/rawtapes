@@ -18,7 +18,7 @@
 			</div>
 			<ul class="artist-list slide">
                             <?php foreach($this->artist_links as $key => $value){
-                                echo '<li><a href="#" ><img src="/assets/artists_header_text/'.$value['header_text_url'].'" /></a></li>';
+                                echo '<li><a href="/welcome/artist/'.$value['url'].'" ><img src="/assets/artists_header_text/'.$value['header_text_url'].'" /></a></li>';
                             }
                             ?>
 				
