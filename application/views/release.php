@@ -5,7 +5,7 @@
 <div id="main">
     <h1 class="text-catalog">CATALOG</h1>
     <div class="photo-holder">
-        <img src="../../../assets/release_art/1a962-staylow.jpg" width="454" height="455" alt="image description">
+        <img src="/assets/release_art/<?php echo $data['art_url']; ?>" width="454" height="455" alt="image description">
     </div>
     <div id="content">
         <h1><?php echo $data['release_title']; ?></h1>
