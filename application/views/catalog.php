@@ -43,7 +43,8 @@
             foreach ($data as $key => $value) {
 //                var_dump($value);
 //                die;
-                echo '  <li class="img_wrapper">
+                echo '  
+                    <li class="img_wrapper">
                         <a href="/welcome/release/' . $value['url'] . '">
                         <span class="text_effect"><span style="float:left;text-align:left;margin-left:5px;margin-top:5px;font-size:18px;">' . $value['release_title'] . '</span></span>
                         <img src="/assets/release_art/' . $value['art_url'] . '" width="99" height="100" alt="' . $value['release_title'] . '"></a>
