@@ -8,19 +8,21 @@
     .text_effect {
         position: absolute;
         top: 0;
-        color:Black;
-        background-color:white;
+        color: white;
+        background-color: black;
         width: 100px;
         height: 100px;
-        line-height:30px;
-        font-size:30px;
-        /*text-align: center;*/
+        font-size: 15px;
+        text-align: center;
         z-index: 10;
         opacity: 0;
         -webkit-transition: all 0.5s ease;
         -moz-transition: all 0.5s ease;
         -o-transition: all 0.5s ease;
         transition: all 0.5s ease;
+        word-break: break-word;
+        word-spacing: normal;
+        letter-spacing: normal;
     }
     .text_effect:hover {
         opacity:1;
