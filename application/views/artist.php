@@ -3,7 +3,7 @@
 //  die;
 ?>
 <div id="main">
-    <div class="photo-holder"><img src="/assets/artists_pic/    <?php echo $data['profile_pic']; ?>" width="422" height="849" alt="image description"></div>
+    <div class="photo-holder"><img src="/assets/artists_pic/    <?php echo $data['profile_pic_url']; ?>" width="422" height="849" alt="image description"></div>
     <div id="content">
         <h1><?php echo $data['name']; ?></h1>
         <div class="txt-holder">
