@@ -30,5 +30,18 @@ class releases_Model extends CI_Model {
         }
         return false;
     }
+    
+    function getReleaseIdByUrl($url){
+        $this->db->select('release_id');
+        $this->db->from('releases');
+        
+        $this->db->where('url',$url);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (!empty($result)) {
+            return $result[0]['release_id'];
+        }
+        return false;
+    }
 
 }

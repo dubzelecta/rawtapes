@@ -42,7 +42,7 @@
 //                var_dump($value);
 //                die;
                 echo '  <li class="img_wrapper">
-                        <a href="/welcome/release/' . $value['release_id'] . '">
+                        <a href="/welcome/release/' . $value['url'] . '">
                         <span class="text_effect">' . $value['release_title'] . '</span>
                         <img src="/assets/release_art/' . $value['art_url'] . '" width="99" height="100" alt="' . $value['release_title'] . '"></a>
                     </li>';

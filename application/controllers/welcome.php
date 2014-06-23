@@ -71,9 +71,10 @@ class Welcome extends CI_Controller {
 
     function release() {
         $this->load->model('releases_model');
-        $release_id = end($this->uri->segment_array());
-        if (!is_numeric($release_id)) {
-            redirect("/");
+        $release_url = mysql_real_escape_string(end($this->uri->segment_array()));
+        $release_id = $this->releases_model->getReleaseIdByUrl($release_url);   
+        if (!$release_url) {
+            redirect('/');
         }
         $release = $this->releases_model->getRelease($release_id);
         $this->template->load('catalog', 'release', array('data' => $release, 'catalog_class' => 'catalog'));
