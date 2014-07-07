@@ -16,7 +16,6 @@
 
         <div class="btns-area">
             <a href="<?php echo $data['bandcamp_album_link']; ?>">Buy in Shop</a>
-            <a href="<?php echo $data['itunes_link']; ?>" class="itunes">Buy on iTunes</a>
         </div>
         <div class="txt-holder">
             <?php echo $data['description']; ?>

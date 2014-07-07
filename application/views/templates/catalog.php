@@ -13,6 +13,7 @@
         <?php $this->load->view('header');?>
                 <?php echo $body; ?>
         <?php $this->load->view('footer');?>
+        </div>
 	</div>
 </body>
 </html>
