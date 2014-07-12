@@ -68,6 +68,19 @@ class Welcome extends CI_Controller {
             redirect('/');
         }
     }
+    
+    function artisttorelease() {
+        if ($this->ion_auth->logged_in()) {
+            $crud = new grocery_CRUD();
+            $crud->set_table('artisttorelease');
+            $crud->set_relation('artist_id', 'artists', 'name');
+            $crud->set_relation('release_id', 'releases', 'release_title');
+            $output = $crud->render();
+            $this->_example_output($output);
+        } else {
+            redirect('/');
+        }
+    }
 
     function release() {
         $this->load->model('releases_model');
@@ -77,7 +90,8 @@ class Welcome extends CI_Controller {
             redirect('/');
         }
         $release = $this->releases_model->getRelease($release_id);
-        $this->template->load('catalog', 'release', array('data' => $release, 'catalog_class' => 'catalog'));
+        $otherArtists = $this->releases_model->getOtherArtists($release_id,$release);
+        $this->template->load('catalog', 'release', array('data' => $release, 'catalog_class' => 'catalog','otherArtists' => $otherArtists));
     }
 
     public function index() {

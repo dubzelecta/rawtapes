@@ -26,6 +26,18 @@ class artists_Model extends CI_Model {
         }
         return false;
     }
+    
+    function getArtistName($artist_id) {
+        $this->db->select('name');
+        $this->db->from('artists');
+        $this->db->where('artist_id', $artist_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        if (!empty($result)) {
+            return $result[0];
+        }
+        return false;
+    }
 
     function getReleasesByArtistId($artist_id) {
         $this->db->select('bandcamp_link');

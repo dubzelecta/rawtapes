@@ -22,7 +22,7 @@ class releases_Model extends CI_Model {
         $this->db->select('*');
         $this->db->from('releases');
         $this->db->join('artists', 'artists.artist_id = releases.artist_id');
-        $this->db->where('releases.release_id',$release_id);
+        $this->db->where('releases.release_id', $release_id);
         $query = $this->db->get();
         $result = $query->result_array();
         if (!empty($result)) {
@@ -30,18 +30,45 @@ class releases_Model extends CI_Model {
         }
         return false;
     }
-    
-    function getReleaseIdByUrl($url){
+
+    function getReleaseIdByUrl($url) {
         $this->db->select('release_id');
         $this->db->from('releases');
-        
-        $this->db->where('url',$url);
+
+        $this->db->where('url', $url);
         $query = $this->db->get();
         $result = $query->result_array();
         if (!empty($result)) {
             return $result[0]['release_id'];
         }
         return false;
+    }
+
+    function getOtherArtists($release_id, $artist_id) {
+        $this->db->select('releases.artist_id as original_artist , artisttorelease.artist_id as otherartistid');
+        $this->db->from('artisttorelease');
+        $this->db->join('releases', 'releases.release_id = artisttorelease.release_id');
+        $this->db->where('artisttorelease.release_id', $release_id);
+        $query = $this->db->get();
+        $result = $query->result_array();
+        $result = $this->formatReleaseArtists($result);
+        if (!empty($result)) {
+            return $result;
+        }
+        return false;
+    }
+
+    function formatReleaseArtists($mixedArtistArray) {
+        $this->load->model('artists_model');
+        foreach ($mixedArtistArray as $key => $value) {
+            if(isset($value['otherartistid'])){
+            $otherArtists[] = $this->artists_model->getArtistName($value['otherartistid']);
+            }
+        }
+        if (!empty($otherArtists)) {
+            return $otherArtists;
+        }
+        return FALSE;
     }
 
 }
