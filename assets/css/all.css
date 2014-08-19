@@ -92,6 +92,11 @@ figure {
     height: 31px;
     background: url(../images/social-networks.png) no-repeat -96px -3px;
 }
+.social-networks li a.instagram {
+    width: 58px;
+    height: 42px;
+    background: url(../images/instagram.png) no-repeat ;
+}
 
 .artist-list {
     margin: 0;
