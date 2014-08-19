@@ -16,7 +16,6 @@ class Welcome extends CI_Controller {
         $this->load->database();
         $this->load->helper('url');
         $this->load->library('ion_auth');
-        /* ------------------ */
         $this->load->library('grocery_CRUD');
 
         $this->load->model('artists_model');
@@ -95,6 +94,7 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
+        $this->output->enable_profiler(TRUE);
         $this->load->model('blog_model');
         $this->load->model('events_model');
         $this->load->model('mixtape_model');
@@ -103,7 +103,20 @@ class Welcome extends CI_Controller {
         $this->events = $this->events_model->getEvents();
         $this->random_artist = $this->artists_model->getRandomArtist();
         $blog_posts = $this->blog_model->getAllPosts();
+        $this->load->model('releases_model');
+        $releases = $this->releases_model->getAllReleases();
+        $formattedPosts = $this->orderAllPostsBydate($blog_posts,$releases);
         $this->template->load('main', 'blog', array('data' => $blog_posts));
+    }
+    
+    function orderAllPostsBydate($blog_posts,$releases){
+        foreach($releases as $key => $value){
+            
+        }
+        $result = array_merge($blog_posts,$releases);
+        
+//        var_dump($result);
+//        die;
     }
 
     function catalog() {

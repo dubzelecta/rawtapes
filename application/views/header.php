@@ -6,7 +6,7 @@
 					<ul>
 						<li><a href="/" class="blog">blog</a></li>
 						<li><a href="/welcome/catalog" class="catalog">catalog</a></li>
-						<li><a href="http://rawtapes.bandcamp.com/"  target="_blank" class="shop">shop</a></li>
+						<!--<li><a href="http://rawtapes.bandcamp.com/"  target="_blank" class="shop">shop</a></li>-->
 						<li><a href="/welcome/contact" class="contact">contact</a></li>
 					</ul>
 				</nav>
@@ -16,6 +16,7 @@
 					<li><a href="https://soundcloud.com/raw-tapes" target="_blank" class="ico"></a></li>
 				</ul>
 			</div>
+                        <div id="listHead" class="listedges"></div>
 			<ul class="artist-list slide">
                             <?php foreach($this->artist_links as $key => $value){
                                 echo '<li><a href="/welcome/artist/'.$value['url'].'" ><img src="/assets/artists_header_text/'.$value['header_text_url'].'" /></a></li>';
@@ -39,4 +40,5 @@
 				<li><a href="#" class="rejoicer">rejoicer/guadloop</a></li>
 				<li class="remove-sep"><a href="#" class="sinez">sinez</a></li>-->
 			</ul>
-		</header>
+                        <div id="listBottom" class="listedges"></div>
+</header>

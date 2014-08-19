@@ -13,13 +13,13 @@
             By <a href="/welcome/artist/<?php echo $data['url']; ?>"><?php echo $data['name']; ?></a>
             <?php
             $artists_num = (count($otherArtists) - 1);
-            echo " And ";
+            if(!empty($otherArtists)){echo " And ";
             foreach($otherArtists as $key => $value){
-                
               echo   '<a href="/welcome/artist/'.$value["name"].'">'.$value["name"].'</a>';
               if($key != $artists_num){
                   echo " , ";
               }
+            }
             }
             ?>
         </span>

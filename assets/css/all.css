@@ -92,6 +92,7 @@ figure {
     height: 31px;
     background: url(../images/social-networks.png) no-repeat -96px -3px;
 }
+
 .artist-list {
     margin: 0;
     padding: 23px 0 13px;
@@ -99,7 +100,9 @@ figure {
     display: none;
     position: relative;
     overflow: hidden;
-    background: url(../images/bg-lists.png) no-repeat;
+    background:black;
+    border-radius:10px;
+    
 }
 .artist-list li {
     position: relative;
@@ -733,4 +736,14 @@ ol li:before {
     color: #5d5d5d;
     content: counters(item, ".") " ";
     counter-increment: item;
+}
+
+#listHead {width:100%;height:10px;background: url(../images/bubble_top.png) no-repeat;}
+#listBottom {width: 100%;height: 26px;background: url(../images/bubble_bottom.png) no-repeat;background-position-y: -19px;}
+.listedges{
+    display:none;
+}
+.hidden{
+    display:none; 
+    
 }

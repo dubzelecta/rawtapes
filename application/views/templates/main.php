@@ -30,7 +30,7 @@ if(isset($catalog_class)){echo $catalog_class;} ?>">
 					<img src="/assets/random_artists_pic/<?php echo $this->random_artist['random_artist_pic']; ?>" width="301" height="87" alt="image description">
 					<!--<span class="<?php // echo $this->random_artist['name']; ?>"><?php // echo  $this->random_artist['name']; ?></span>-->
 				</div>
-				<div class="side-widget">
+<!--				<div class="side-widget">
 					<h2 class="text-shop">shop</h2>
 					<ul class="products">
 						<li>
@@ -44,7 +44,7 @@ if(isset($catalog_class)){echo $catalog_class;} ?>">
 							<div class="details"><span class="price">$15</span> <a href="http://rawtapes.bandcamp.com/merch/buttering-trio-toast-shirts" class="buy">buy</a></div>
 						</li>
 					</ul>
-				</div>
+				</div>-->
 				<div class="side-widget last">
 					<strong class="title">upcoming events</strong>
 					<ul class="infos">

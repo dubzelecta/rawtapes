@@ -2,6 +2,7 @@
 jQuery(function(){
 	initOpenClose();
 	initCustomHover();
+        $('.opener').on("click",function(){$('.listedges').toggle();})
 });
 
 // open-close init

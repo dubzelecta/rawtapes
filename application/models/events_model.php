@@ -7,7 +7,10 @@ class events_Model extends CI_Model {
     }
 
     function getEvents() {
-        $query = $this->db->get('events');
+        $this->db->select();
+        $this->db->from('events');
+        $this->db->where('event_date >',date("Y-m-d h:i:s"));
+        $query = $this->db->get();
         $result = $query->result_array();
         if (!empty($result)) {
             return $result;
