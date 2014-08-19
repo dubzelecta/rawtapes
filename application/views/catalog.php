@@ -46,7 +46,7 @@
                 echo '  
                     <li class="img_wrapper">
                         <a href="/welcome/release/' . $value['url'] . '">
-                        <span class="text_effect" alt="' . $value['release_title'] . '"><span style="float:left;text-align:left;margin-left:5px;margin-top:5px;font-size:16px;">' . $value['release_title'] . '</span></span>
+                        <span class="text_effect" alt="' . $value['release_title'] . '"><span style="float:left;text-align:left;margin-left:5px;margin-top:5px;font-size:16px;line-height: 13px;">' . $value['release_title'] . '</span></span>
                         <img src="/assets/release_art/' . $value['art_url'] . '" width="99" height="100" alt="' . $value['release_title'] . '"></a>
                     </li>';
             }
