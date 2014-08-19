@@ -12,6 +12,7 @@
             <li><a href="https://www.facebook.com/Raw.Tapes" target="_blank" class="facebook">facebook</a></li>
             <li><a href="https://twitter.com/Raw_Tapes" target="_blank" class="twitter">twitter</a></li>
             <li><a href="https://soundcloud.com/raw-tapes" target="_blank" class="ico"></a></li>
+            <li><a href="http://instagram.com/rawtapes" target="_blank" class="instagram"></a></li>
         </ul>
     </div>
     <span class="rights"><a href="#">Raw Tapes</a> &copy; 2013</span>

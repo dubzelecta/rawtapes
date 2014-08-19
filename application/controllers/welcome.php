@@ -132,6 +132,7 @@ class Welcome extends CI_Controller {
 //        var_dump($result);
 //        die;
     }
+    
 
     function catalog() {
         $this->load->model('releases_model');

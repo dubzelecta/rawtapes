@@ -2,12 +2,22 @@
 <?php
 if (!empty($data)) {
     foreach ($data as $key => $value) {
+        $linkToOpenTag = "";
+        $linkToCloseTag = "";
+        if (isset($value['url'])) {
+            $linkToOpenTag = "<a href='/welcome/release/" . $value['url'] . "'>";
+            $linkToCloseTag = "</a>";
+        }
         echo '<div class="post">';
         echo '<h2>' . $value['post_title'] . '</h2>';
         if (isset($value['release_date'])) {
+            echo $linkToOpenTag;
             echo '<img src="/assets/release_art/' . $value['post_pic'] . '" width="692" height="606" alt="image description">';
+            echo $linkToCloseTag;
             echo '<div class="play-area">';
-            echo $value['bandcamp_link'];
+//            echo '<iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album='.$value['bandcamp_link'].'/size=small/bgcol=333333/linkcol=0f91ff/artwork=none/transparent=true/" seamless=""></iframe>';
+            echo '<iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album=' . $value['bandcamp_link'] . '/size=small/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless></iframe>';
+//            echo $value['bandcamp_link'];
             echo '</div>';
         } else {
             echo (isset($value['text'])) ? $value['text'] : '';

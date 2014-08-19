@@ -15,6 +15,7 @@ class releases_Model extends CI_Model {
                     'release_date as post_date'
                     )
                 );
+//        $this->db->join("releases", "desc");
         $this->db->order_by("release_date", "desc");
         $query = $this->db->get('releases');
 
