@@ -48,7 +48,10 @@ if(isset($catalog_class)){echo $catalog_class;} ?>">
 				<div class="side-widget last">
 					<strong class="title">upcoming events</strong>
 					<ul class="infos">
-                                                <?php foreach($this->events as $key => $value){
+                                                
+                                                <?php 
+                                                var_dump($this->events);
+                                                foreach($this->events as $key => $value){
                                                     $classActive = 'class="active"';
                                                     if((($key % 2) == 0)){
                                                         $classActive = '';   
