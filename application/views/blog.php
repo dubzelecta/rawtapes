@@ -7,9 +7,9 @@ if (!empty($data)) {
         if(isset($value['release_date'])){
         echo '<img src="/assets/release_art/' . $value['post_pic'] . '" width="692" height="606" alt="image description">';            
         }
+        else{
         echo (isset($value['text']))?$value['text']:'';
-//        echo '<div class="play-area">';
-//        echo $value['bandcamp_link'];
+        }
         echo '</div>';
     }
 }
