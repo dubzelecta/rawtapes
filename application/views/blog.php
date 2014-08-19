@@ -5,7 +5,7 @@ if (!empty($data)) {
         echo '<div class="post">';
         echo '<h2>' . $value['post_title'] . '</h2>';
         if(isset($value['release_date'])){
-        echo '<img src="/assets/post_pics/' . $value['post_pic'] . '" width="692" height="483" alt="image description">';            
+        echo '<img src="/assets/release_art/' . $value['post_pic'] . '" width="692" height="483" alt="image description">';            
         }
         echo (isset($value['text']))?$value['text']:'';
 //        echo '<div class="play-area">';
