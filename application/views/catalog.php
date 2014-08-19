@@ -33,7 +33,7 @@
     }
 
     .magicText{
-        text-align: left;margin-left: 1px;margin-top: 5px;font-size: 16px;line-height: 13px;width: 100%;word-wrap: break-word;word-break: break-word;
+        text-align: left;font-size: 14px;line-height: 13px;width: 100%;word-wrap: break-word;word-break: break-word;
     }
 </style>
 <div id="main">
