@@ -32,7 +32,9 @@
         z-index:1;
     }
 
-
+    .magicText{
+        text-align: left;margin-left: 1px;margin-top: 5px;font-size: 16px;line-height: 13px;width: 100%;word-wrap: break-word;word-break: break-word;
+    }
 </style>
 <div id="main">
     <span class="text-catalog">CATALOG</span>
@@ -47,7 +49,7 @@
                 echo '  
                     <li class="img_wrapper">
                         <a href="/welcome/release/' . $value['url'] . '">
-                        <span class="text_effect" alt="' . $value['release_title'] . '"><span style="text-align: left;margin-left: 1px;margin-top: 5px;font-size: 16px;line-height: 13px;width: 100%;word-wrap: break-word;word-break: break-word;">' . $value['release_title'] . '</span></span>
+                        <span class="text_effect" alt="' . $value['release_title'] . '"><span class="magicText">' . $value['release_title'] . '</span></span>
                         <img src="/assets/release_art/' . $value['art_url'] . '" width="99" height="100" alt="' . $value['release_title'] . '"></a>
                     </li>';
             }
