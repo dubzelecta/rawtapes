@@ -50,7 +50,7 @@ if(isset($catalog_class)){echo $catalog_class;} ?>">
 					<ul class="infos">
                                                 
                                                 <?php 
-                                                var_dump($this->events);
+                                                if($this->events){
                                                 foreach($this->events as $key => $value){
                                                     $classActive = 'class="active"';
                                                     if((($key % 2) == 0)){
@@ -62,7 +62,8 @@ if(isset($catalog_class)){echo $catalog_class;} ?>">
                                                             </li>';
                                                     
                                                             }
-                                                ?>
+                                                }
+                                                            ?>
 					</ul>
 					<!--<a href="#" class="more">-More-</a>-->
 				</div>
