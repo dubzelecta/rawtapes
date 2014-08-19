@@ -4,7 +4,9 @@ if (!empty($data)) {
     foreach ($data as $key => $value) {
         echo '<div class="post">';
         echo '<h2>' . $value['post_title'] . '</h2>';
-//        echo '<img src="/assets/post_pics/' . $value['post_pic'] . '" width="692" height="483" alt="image description">';
+        if(isset($value['release_date'])){
+        echo '<img src="/assets/post_pics/' . $value['post_pic'] . '" width="692" height="483" alt="image description">';            
+        }
         echo (isset($value['text']))?$value['text']:'';
 //        echo '<div class="play-area">';
 //        echo $value['bandcamp_link'];

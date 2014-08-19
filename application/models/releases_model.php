@@ -8,10 +8,19 @@ class releases_Model extends CI_Model {
 
     function getAllReleases() {
         $this->db->select();
+        $this->db->select(
+                array('release_title as post_title',
+                    'art_url as post_pic',
+                    'description as text',
+                    'release_date as post_date'
+                    )
+                );
         $this->db->order_by("release_date", "desc");
         $query = $this->db->get('releases');
 
         $result = $query->result_array();
+//        var_dump($result);
+//        die;
         if (!empty($result)) {
             return $result;
         }

@@ -67,7 +67,7 @@ class Welcome extends CI_Controller {
             redirect('/');
         }
     }
-    
+
     function artisttorelease() {
         if ($this->ion_auth->logged_in()) {
             $crud = new grocery_CRUD();
@@ -84,17 +84,17 @@ class Welcome extends CI_Controller {
     function release() {
         $this->load->model('releases_model');
         $release_url = mysql_real_escape_string(end($this->uri->segment_array()));
-        $release_id = $this->releases_model->getReleaseIdByUrl($release_url);   
+        $release_id = $this->releases_model->getReleaseIdByUrl($release_url);
         if (!$release_url) {
             redirect('/');
         }
         $release = $this->releases_model->getRelease($release_id);
-        $otherArtists = $this->releases_model->getOtherArtists($release_id,$release);
-        $this->template->load('catalog', 'release', array('data' => $release, 'catalog_class' => 'catalog','otherArtists' => $otherArtists));
+        $otherArtists = $this->releases_model->getOtherArtists($release_id, $release);
+        $this->template->load('catalog', 'release', array('data' => $release, 'catalog_class' => 'catalog', 'otherArtists' => $otherArtists));
     }
 
     public function index() {
-        $this->output->enable_profiler(TRUE);
+//        $this->output->enable_profiler(TRUE);
         $this->load->model('blog_model');
         $this->load->model('events_model');
         $this->load->model('mixtape_model');
@@ -105,16 +105,30 @@ class Welcome extends CI_Controller {
         $blog_posts = $this->blog_model->getAllPosts();
         $this->load->model('releases_model');
         $releases = $this->releases_model->getAllReleases();
-        $formattedPosts = $this->orderAllPostsBydate($blog_posts,$releases);
-        $this->template->load('main', 'blog', array('data' => $blog_posts));
+//        var_dump($releases);
+//        die;
+        $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
+    function sortFunction($a, $b) {
+        return strtotime($b["post_date"]) - strtotime($a["post_date"]);
     }
-    
-    function orderAllPostsBydate($blog_posts,$releases){
-        foreach($releases as $key => $value){
-            
+        usort($formattedPosts, "sortFunction");
+        $this->template->load('main', 'blog', array('data' => $formattedPosts));
+    }
+
+
+
+    function orderAllPostsBydate($blog_posts, $releases) {
+
+        foreach ($blog_posts as $key => $value) {
+//            var_dump($value);
+//            die;
         }
-        $result = array_merge($blog_posts,$releases);
-        
+//        foreach($releases as $key => $value){
+//            var_dump($value);
+//            die;
+//        }
+        $result = array_merge($blog_posts, $releases);
+        return $result;
 //        var_dump($result);
 //        die;
     }
