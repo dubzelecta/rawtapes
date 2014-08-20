@@ -74,7 +74,7 @@
 $(document).ready(function() {
 	$("div#aposts").jPages({
 	    containerID : "posts",
-	    perPage: 1
+	    perPage: 3
   	});
 });
 </script>
