@@ -142,6 +142,7 @@ class Welcome extends CI_Controller {
         $this->load->model('contacts_model');
         $this->load->model('events_model');
         $this->load->model('mixtape_model');
+        $this->random_artist = $this->artists_model->getRandomArtist();
         $contacts = $this->contacts_model->getContacts();
         $this->events = $this->events_model->getEvents();
         $this->latest_mixtape = $this->mixtape_model->getLatestMixtape();
