@@ -26,7 +26,11 @@
                     </div>
                     <div class="side-widget">
                         <div class="text-artist"><h2>LATEST ARTIST</h2></div>
+                        <?php
+                        echo "<a href='/welcome/artist/".$this->random_artist['url']."'>";
+                        ?>
                         <img src="/assets/random_artists_pic/<?php echo $this->random_artist['random_artist_pic']; ?>" width="301" height="87" alt="image description">
+                        <?php echo "</a>"; ?>
                         <!--<span class="<?php // echo $this->random_artist['name'];  ?>"><?php // echo  $this->random_artist['name'];  ?></span>-->
                     </div>
                     <!--				<div class="side-widget">
