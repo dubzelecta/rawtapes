@@ -1,6 +1,10 @@
 <h1 class="text-blog">BLOG</h1>
-<?php
+    
+<div id="posts">
+        
+    <?php
 if (!empty($data)) {
+
     foreach ($data as $key => $value) {
         $linkToOpenTag = "";
         $linkToCloseTag = "";
@@ -24,8 +28,11 @@ if (!empty($data)) {
         }
         echo '</div>';
     }
+    
 }
 ?>
+    </div>
+<div id="aposts"></div>
 
 <!--<div  class="post">
         <h2>Calowood (Vol. 1) - Yuka</h2>
