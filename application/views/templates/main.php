@@ -57,7 +57,7 @@
                                     }
                                     echo '  <li ' . $classActive . '>
                                                             <time datetime="' . $value['event_date'] . '">' . date("m/d", strtotime($value['event_date'])) . '</time>
-                                                            <div class="info-holder"><span><a href="http://' . $value['event_link'] . '">' . $value['event_title'] . '</a></span></div>
+                                                            <div class="info-holder"><span><a href="http://' . $value['event_link'] . '" target="_blank">' . $value['event_title'] . '</a></span></div>
                                                             </li>';
                                 }
                             } else {

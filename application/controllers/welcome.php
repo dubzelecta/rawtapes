@@ -94,7 +94,6 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-//        $this->output->enable_profiler(TRUE);
         $this->load->model('blog_model');
         $this->load->model('events_model');
         $this->load->model('mixtape_model');
@@ -105,8 +104,6 @@ class Welcome extends CI_Controller {
         $blog_posts = $this->blog_model->getAllPosts();
         $this->load->model('releases_model');
         $releases = $this->releases_model->getAllReleases();
-//        var_dump($releases);
-//        die;
         $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
     function sortFunction($a, $b) {
         return strtotime($b["post_date"]) - strtotime($a["post_date"]);
@@ -118,19 +115,8 @@ class Welcome extends CI_Controller {
 
 
     function orderAllPostsBydate($blog_posts, $releases) {
-
-        foreach ($blog_posts as $key => $value) {
-//            var_dump($value);
-//            die;
-        }
-//        foreach($releases as $key => $value){
-//            var_dump($value);
-//            die;
-//        }
         $result = array_merge($blog_posts, $releases);
         return $result;
-//        var_dump($result);
-//        die;
     }
     
 
