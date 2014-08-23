@@ -31,6 +31,7 @@ class Welcome extends CI_Controller {
             $crud = new grocery_CRUD();
             $crud->set_table('artists');
             $crud->set_field_upload('header_text_url', 'assets/artists_header_text');
+            $crud->set_field_upload('header_hover_text', 'assets/artists_hover_text');
             $crud->set_field_upload('profile_pic_url', 'assets/artists_pic');
             $crud->set_field_upload('random_artist_pic', 'assets/random_artists_pic');
             $output = $crud->render();
@@ -104,14 +105,15 @@ class Welcome extends CI_Controller {
         $blog_posts = $this->blog_model->getAllPosts();
         $this->load->model('releases_model');
         $releases = $this->releases_model->getAllReleases();
-        $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
+//        $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
+        $formattedPosts = $this->orderAllPostsBydate($blog_posts, array());
+        usort($formattedPosts, array("Welcome","sortFunction"));
+        $this->template->load('main', 'blog', array('data' => $formattedPosts));
+    }
+    
     function sortFunction($a, $b) {
         return strtotime($b["post_date"]) - strtotime($a["post_date"]);
     }
-        usort($formattedPosts, "sortFunction");
-        $this->template->load('main', 'blog', array('data' => $formattedPosts));
-    }
-
 
 
     function orderAllPostsBydate($blog_posts, $releases) {
@@ -135,7 +137,8 @@ class Welcome extends CI_Controller {
         }
         $artist = $this->artists_model->getArtist($artist_id);
         $artistReleases = $this->artists_model->getReleasesByArtistId($artist_id);
-        $this->template->load('catalog', 'artist', array('data' => $artist, 'artist_releases' => $artistReleases, 'catalog_class' => 'artists'));
+        $otherArtistReleases = $this->artists_model->getOtherArtistReleases($artist_id);
+        $this->template->load('catalog', 'artist', array('data' => $artist, 'artist_releases' => $artistReleases, 'catalog_class' => 'artists','otherArtistReleases'=>$otherArtistReleases));
     }
 
     function contact() {

@@ -26,6 +26,14 @@
                         seamless=""></iframe></li>';
                     }
                 }
+                if (isset($otherArtistReleases) && is_array($otherArtistReleases)) {
+                    
+                    foreach ($otherArtistReleases as $key => $artist_release) {
+                        echo '<li><iframe style="border: 0; width: 270px; height: 270px;" 
+                        src="http://bandcamp.com/EmbeddedPlayer/album=' . $artist_release . '/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/" 
+                        seamless=""></iframe></li>';
+                    }
+                }
                 ?>
             </ul>
         </div>

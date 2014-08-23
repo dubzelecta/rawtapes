@@ -75,12 +75,23 @@
             </div>
         </div>
 <script type="text/javascript">
+    console.log(';asdasasdasd');
 $(document).ready(function() {
 	$("div#aposts").jPages({
 	    containerID : "posts",
 	    perPage: 3
   	});
-});
+        
+        $('.artistMain img').hover(
+        function(){
+            $(this).attr('src','/assets/artists_hover_text/'+$(this).attr('otherimage'));
+        }
+         ,
+         function(){
+             $(this).attr('src','/assets/artists_header_text/'+$(this).attr('mainimage'));
+         }
+        );
+        });
 </script>
 
     </body>

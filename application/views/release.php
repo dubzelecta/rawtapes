@@ -18,7 +18,7 @@
               echo   '<a href="/welcome/artist/'.$value["name"].'">'.$value["name"].'</a>';
               if($key != $artists_num){
                   if($key == ($artists_num - 1)){
-                  echo " & ";                      
+                  echo " and ";                      
                   }
                   else{
                   echo " , ";

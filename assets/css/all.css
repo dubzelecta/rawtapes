@@ -763,10 +763,25 @@ ol li:before {
 }
 #aposts a:hover{
     transition: 0.2s;
-    color: darkred;
+    color: lightgreen;
     font-weight: bold;
     word-spacing:4px;
-    font-size:28px;
+    /*font-size:28px;*/
     text-decoration:none !important;
     cursor:pointer;
+}
+.dash{
+    background-image:url('../images/dash2.png');
+    width:34px;
+    height:16px;
+    background-size:200% 200%;
+    
+}
+.dashli{
+    /*background-image:url('../images/dash2.png');*/
+    width:34px;
+    height:16px;
+    background-size:200% 200%;
+    left: -20px;
+    width:1px;
 }
