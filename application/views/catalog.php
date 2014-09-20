@@ -38,7 +38,7 @@
 </style>
 <div id="main">
     <span class="text-catalog">CATALOG</span>
-    <ul class="product">
+    <ul class="product" style="display:none;">
         <?php
         if (!empty($data)) {
 
@@ -95,3 +95,19 @@
         <li><a href="#"><img src="images/img54.jpg" width="100" height="100" alt="image description"></a></li>-->
     </ul>
 </div>
+<div id="loadingModal" style="width:100%;height:200px;text-align:center;top:200px;position:absolute;"><img src="/assets/images/smallajaxloader.gif" /></div>
+<script type="text/javascript">
+    console.log('asdasd');
+    console.log($('img'));
+    $(window).load(function(){
+        
+        $('#loadingModal').toggle();
+        $('ul.product').fadeIn('slower',function(){
+            
+            
+            
+        });
+        
+    });
+
+</script>
