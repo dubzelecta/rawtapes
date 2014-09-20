@@ -105,8 +105,8 @@ class Welcome extends CI_Controller {
         $blog_posts = $this->blog_model->getAllPosts();
         $this->load->model('releases_model');
         $releases = $this->releases_model->getAllReleases();
-//        $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
-        $formattedPosts = $this->orderAllPostsBydate($blog_posts, array());
+        $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
+//        $formattedPosts = $this->orderAllPostsBydate($blog_posts, array());
         usort($formattedPosts, array("Welcome","sortFunction"));
         $this->template->load('main', 'blog', array('data' => $formattedPosts));
     }
