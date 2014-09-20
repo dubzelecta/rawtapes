@@ -100,13 +100,14 @@ class artists_Model extends CI_Model {
 
     function getArtistLinks() {
         $this->db->select(array('header_text_url','header_hover_text','url'));
+        $this->db->where('showinartists',"Yes");
         $this->db->order_by("name", "desc");
         $query = $this->db->get('artists');
         $result = $query->result_array();
         if (!empty($result)) {
             return $result;
         }
-        return false;
+        return array();
     }
 
     function getArtistIdByUrl($url) {
