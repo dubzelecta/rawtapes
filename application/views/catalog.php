@@ -42,8 +42,6 @@
         <?php
         if (!empty($data)) {
             foreach ($data as $key => $value) {
-//                var_dump($value);
-//                float: left;
 //
                 echo '  
                     <li class="img_wrapper">
