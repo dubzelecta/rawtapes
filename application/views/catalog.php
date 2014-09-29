@@ -92,7 +92,7 @@
         <li><a href="#"><img src="images/img54.jpg" width="100" height="100" alt="image description"></a></li>-->
     </ul>
 </div>
-<div id="loadingModal" style="width:100%;height:200px;text-align:center;top:200px;position:absolute;"><img src="/assets/images/smallajaxloader.gif" /></div>
+<div id="loadingModal" style="width:100%;height:200px;text-align:center;top:100px;position:relative;"><img src="/assets/images/smallajaxloader.gif" /></div>
 <script type="text/javascript">
     console.log('asdasd');
     console.log($('img'));
