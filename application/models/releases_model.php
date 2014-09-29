@@ -13,16 +13,17 @@ class releases_Model extends CI_Model {
                     'art_url as post_pic',
                     'description as text',
                     'release_date as post_date'
-                    )
-                );
+                )
+        );
 //        $this->db->join("releases", "desc");
         $this->db->order_by("release_date", "desc");
         $query = $this->db->get('releases');
-
         $result = $query->result_array();
-//        var_dump($result);
-//        die;
         if (!empty($result)) {
+            foreach ($result as $key => $value) {
+                $artistName = $this->artists_model->getArtistName($value['artist_id']);
+                $result[$key]['artist_name'] = $artistName['name'];
+            }
             return $result;
         }
         return false;
@@ -71,8 +72,8 @@ class releases_Model extends CI_Model {
     function formatReleaseArtists($mixedArtistArray) {
         $this->load->model('artists_model');
         foreach ($mixedArtistArray as $key => $value) {
-            if(isset($value['otherartistid'])){
-            $otherArtists[] = $this->artists_model->getArtistName($value['otherartistid']);
+            if (isset($value['otherartistid'])) {
+                $otherArtists[] = $this->artists_model->getArtistName($value['otherartistid']);
             }
         }
         if (!empty($otherArtists)) {

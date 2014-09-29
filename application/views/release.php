@@ -30,8 +30,9 @@
             }
             ?>
         </span>
-        <div class="play-area">
-            <?php echo '<iframe style="border: 0; width: 100%; height: 42px;" src="http://bandcamp.com/EmbeddedPlayer/album='.$data['bandcamp_link'].'/size=small/bgcol=333333/linkcol=0f91ff/artwork=none/transparent=true/" seamless=""></iframe>'; ?>
+        <!--<div class="play-area">-->
+        <div id="playlist">
+            <?php echo '<iframe style="border: 0; width: 100%; height: 472px;" src="http://bandcamp.com/EmbeddedPlayer/album='.$data['bandcamp_link'].'/size=large/bgcol=ffffff/linkcol=0687f5/artwork=none/transparent=true/" seamless><a href="http://rawtapes.bandcamp.com/album/kalimist-k-boog">Kalimist K Boog by Kalimist K Boog</a></iframe>'; ?>
         </div>
 
         <div class="btns-area">

@@ -41,7 +41,6 @@
     <ul class="product" style="display:none;">
         <?php
         if (!empty($data)) {
-
             foreach ($data as $key => $value) {
 //                var_dump($value);
 //                float: left;
@@ -49,7 +48,7 @@
                 echo '  
                     <li class="img_wrapper">
                         <a href="/welcome/release/' . $value['url'] . '">
-                        <span class="text_effect" alt="' . $value['release_title'] . '"><span class="magicText">' . $value['release_title'] . '</span></span>
+                        <span class="text_effect" alt="' . $value['release_title'] . '"><span class="magicText">' . $value['artist_name'] . ' - ' . $value['release_title'] . '</span></span>
                         <img src="/assets/release_art/' . $value['art_url'] . '" width="99" height="100" alt="' . $value['release_title'] . '"></a>
                     </li>';
             }

@@ -496,7 +496,7 @@ figure {
 #main .photo-holder {
     padding: 8px 0 209px;
     float: left;
-    background: url(../images/bg-photo.png) repeat-x 0 100%;
+    /*background: url(../images/bg-photo.png) repeat-x 0 100%;*/
 }
 .artists #content {
     width: 560px;
@@ -532,7 +532,7 @@ figure {
 }
 .releases {
     width: 102%;
-    margin: 0;
+    margin: 0 0 0 9px;
     padding: 1px 0 0;
     list-style: none;
     overflow: hidden;
@@ -632,7 +632,10 @@ figure {
     vertical-align: top;
     margin: 0 13px 7px 0;
 }
-.catalog-inside #main { padding: 40px 0 553px; }
+.catalog-inside #main { 
+    padding: 40px 0 ; 
+    /*padding: 40px 0 553px;*/ 
+}
 .contact #main { padding: 40px 0 285px; }
 .sub-nav {
     float: left;
@@ -784,4 +787,8 @@ ol li:before {
     background-size:200% 200%;
     left: -20px;
     width:1px;
+}
+#playlist{
+    /*float:left;*/
+        margin-left:15px;
 }
