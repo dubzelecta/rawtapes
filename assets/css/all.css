@@ -70,7 +70,7 @@ figure {
     list-style: none;
 }
 .social-networks li {
-    padding: 0 1px 0 13px;
+    padding: 0 1px 0 0px;
     display: inline-block;
     vertical-align: middle;
 }
