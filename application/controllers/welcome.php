@@ -94,7 +94,7 @@ class Welcome extends CI_Controller {
         $this->template->load('catalog', 'release', array('data' => $release, 'catalog_class' => 'catalog', 'otherArtists' => $otherArtists));
     }
 
-    public function index() {
+    public function index($default = 'default') {
         $this->load->model('blog_model');
         $this->load->model('events_model');
         $this->load->model('mixtape_model');
@@ -107,20 +107,23 @@ class Welcome extends CI_Controller {
         $releases = $this->releases_model->getAllReleases();
         $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
 //        $formattedPosts = $this->orderAllPostsBydate($blog_posts, array());
-        usort($formattedPosts, array("Welcome","sortFunction"));
-        $this->template->load('main', 'blog', array('data' => $formattedPosts));
+        usort($formattedPosts, array("Welcome", "sortFunction"));
+        if (isset($_GET['see']) && $_GET['see'] == '1') {
+
+            $this->template->load('main', 'blog', array('data' => $formattedPosts));
+        } else {
+            $this->template->load('maintainance', 'maintainance', array());
+        }
     }
-    
+
     function sortFunction($a, $b) {
         return strtotime($b["post_date"]) - strtotime($a["post_date"]);
     }
-
 
     function orderAllPostsBydate($blog_posts, $releases) {
         $result = array_merge($blog_posts, $releases);
         return $result;
     }
-    
 
     function catalog() {
         $this->load->model('releases_model');
@@ -138,7 +141,7 @@ class Welcome extends CI_Controller {
         $artist = $this->artists_model->getArtist($artist_id);
         $artistReleases = $this->artists_model->getReleasesByArtistId($artist_id);
         $otherArtistReleases = $this->artists_model->getOtherArtistReleases($artist_id);
-        $this->template->load('catalog', 'artist', array('data' => $artist, 'artist_releases' => $artistReleases, 'catalog_class' => 'artists','otherArtistReleases'=>$otherArtistReleases));
+        $this->template->load('catalog', 'artist', array('data' => $artist, 'artist_releases' => $artistReleases, 'catalog_class' => 'artists', 'otherArtistReleases' => $otherArtistReleases));
     }
 
     function contact() {
