@@ -73,7 +73,9 @@
                     </div>
                 </aside>
             </div>
+        <?php $this->load->view('footer'); ?>
         </div>
+
 <script type="text/javascript">
     console.log(';asdasasdasd');
 $(document).ready(function() {
