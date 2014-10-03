@@ -4,7 +4,7 @@
     foreach($contacts as $key => $value){
         echo '  <h2>'.$value['contact_type'].'</h2>
                 <div class="info-holder">
-                    <span>Contact <a href="'.$value['contact_email'].'">'.$value['contact_name'].'</a></span>
+                    <span>Contact <a href="mailto:'.$value['contact_email'].'">'.$value['contact_name'].'</a></span>
                     <em class="tel">'.$value['phone'].'</em>
                 </div>';
     }
