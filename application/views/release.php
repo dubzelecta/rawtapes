@@ -15,7 +15,7 @@
             $artists_num = (count($otherArtists) - 1);
             if(!empty($otherArtists)){echo " , ";
             foreach($otherArtists as $key => $value){
-              echo   '<a href="/welcome/artist/'.$value["name"].'">'.$value["name"].'</a>';
+              echo   '<a href="/welcome/artist/'.$value["url"].'">'.$value["name"].'</a>';
               if($key != $artists_num){
                   if($key == ($artists_num - 1)){
                   echo " and ";                      

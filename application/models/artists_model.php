@@ -28,11 +28,13 @@ class artists_Model extends CI_Model {
     }
 
     function getArtistName($artist_id) {
-        $this->db->select('name');
+        $this->db->select(array('name','url'));
         $this->db->from('artists');
         $this->db->where('artist_id', $artist_id);
         $query = $this->db->get();
         $result = $query->result_array();
+//        var_dump($result);
+//        die;
         if (!empty($result)) {
             return $result[0];
         }
