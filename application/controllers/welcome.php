@@ -108,12 +108,12 @@ class Welcome extends CI_Controller {
         $formattedPosts = $this->orderAllPostsBydate($blog_posts, $releases);
 //        $formattedPosts = $this->orderAllPostsBydate($blog_posts, array());
         usort($formattedPosts, array("Welcome", "sortFunction"));
-        if (isset($_GET['see']) && $_GET['see'] == '1') {
+//        if (isset($_GET['see']) && $_GET['see'] == '1') {
 
             $this->template->load('main', 'blog', array('data' => $formattedPosts));
-        } else {
-            $this->template->load('maintainance', 'maintainance', array());
-        }
+//        } else {
+//            $this->template->load('maintainance', 'maintainance', array());
+//        }
     }
 
     function sortFunction($a, $b) {
