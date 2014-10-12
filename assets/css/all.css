@@ -111,7 +111,7 @@ figure {
 }
 .artist-list li {
     position: relative;
-    padding: 0 32px 12px 12px;
+    padding: 0 9px 12px 12px;
     float: left;
 }
 .artist-list li:before {
