@@ -121,7 +121,7 @@ figure {
     content: '';
     right: 0;
     top: 8px;
-    background: url(../images/bg-list.png) no-repeat;
+    /*background: url(../images/bg-list.png) no-repeat;*/
 }
 .artist-list li.remove-sep:before { background: none; }
 .artist-list li a {
