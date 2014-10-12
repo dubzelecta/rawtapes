@@ -10,10 +10,10 @@
             <?php echo $data['bio']; ?>
         </div>
         <ul class="social-networks">
-            <li><a href="<?php echo $data['sound_cloud_url']; ?>" class="ico" target="_blank"></a></li>
-            <li><a href="<?php echo $data['facebook_url']; ?>" class="facebook" target="_blank">facebook</a></li>
-            <li><a href="<?php echo $data['twitter_url']; ?>" class="twitter" target="_blank">twitter</a></li>
-            <li><a href="<?php echo $data['instagram_url']; ?>" class="instagram" target="_blank">Instagram</a></li>
+            <?php if(!empty($data['sound_cloud_url'])) {?><li><a href="<?php echo $data['sound_cloud_url']; ?>" class="ico" target="_blank"></a></li><?php } ?>
+            <?php if(!empty($data['facebook_url'])) {?><li><a href="<?php echo $data['facebook_url']; ?>" class="facebook" target="_blank">facebook</a></li><?php } ?>
+            <?php if(!empty($data['twitter_url'])) {?><li><a href="<?php echo $data['twitter_url']; ?>" class="twitter" target="_blank">twitter</a></li><?php } ?>
+            <?php if(!empty($data['instagram_url'])) {?><li><a href="<?php echo $data['instagram_url']; ?>" class="instagram" target="_blank">Instagram</a></li><?php } ?>
         </ul>
         <div class="releases-holder">
             <h2>Releases:</h2>
