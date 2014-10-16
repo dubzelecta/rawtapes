@@ -447,7 +447,7 @@ figure {
     color: #bbbcbc;
     font-size: 12px;
     line-height: 11px;  
-    text-transform: lowercase;
+    text-transform: uppercase;
     overflow: hidden;
 }
 #sidebar .info-holder span { display: block; width:160px;word-wrap:break-word;margin-left:10px;}
