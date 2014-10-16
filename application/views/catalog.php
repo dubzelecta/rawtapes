@@ -33,7 +33,21 @@
     }
 
     .magicText{
-        text-align: left;font-size: 13px;line-height: 13px;width: 100%;word-wrap: break-word;word-break: break-word;
+        float:left;
+        text-align: left;
+        font-size: 11px;line-height: 14px;width: 100%;word-wrap: break-word;word-break: break-word;
+        padding:5px;
+        font-weight:bold;
+        width:90%;
+    }
+    .artistName{
+        /*padding:10px;*/
+        float:left;
+        width:100%;
+        font-style: italic;
+        text-align: left;
+        font-weight:100;
+        /*padding:10px;*/
     }
 </style>
 <div id="main">
@@ -46,7 +60,7 @@
                 echo '  
                     <li class="img_wrapper">
                         <a href="/welcome/release/' . $value['url'] . '">
-                        <span class="text_effect" alt="' . $value['release_title'] . '"><span class="magicText">' . $value['artist_name'] . ' - ' . $value['release_title'] . '</span></span>
+                        <span class="text_effect" alt="' . $value['release_title'] . '"><span class="magicText"><span class="artistName">' . $value['artist_name'] . ' - </span>' . $value['release_title'] . '</span></span>
                         <img src="/assets/release_art/' . $value['art_url'] . '" width="99" height="100" alt="' . $value['release_title'] . '"></a>
                     </li>';
             }

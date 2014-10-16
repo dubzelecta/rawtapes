@@ -123,6 +123,7 @@ figure {
     top: 8px;
     /*background: url(../images/bg-list.png) no-repeat;*/
 }
+
 .artist-list li.remove-sep:before { background: none; }
 .artist-list li a {
     height: 32px;
