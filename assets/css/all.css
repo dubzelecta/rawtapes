@@ -408,12 +408,12 @@ figure {
     background: #000;
 }
 #sidebar .infos li { 
-    padding: 0 0 6px; 
-    height:36px;
+    padding: 10px 0 6px; 
+    height:50px;
 
 }
 #sidebar ul li.active {
-    padding: 0 0 8px;
+    padding: 10px 0 8px;
     font-size: 13px;
     line-height: 17px;
     font-weight: normal;
@@ -443,11 +443,11 @@ figure {
 }
 #sidebar .info-holder {
     padding: 8px 70px 0 0;
-    text-align: center;
+    text-align: left !important;
     color: #bbbcbc;
     font-size: 12px;
-    line-height: 11px;
-    text-transform: uppercase;
+    line-height: 11px;  
+    text-transform: lowercase;
     overflow: hidden;
 }
 #sidebar .info-holder span { display: block; width:160px;word-wrap:break-word;margin-left:10px;}

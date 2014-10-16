@@ -30,6 +30,8 @@
     <ul class="artist-list slide">
         <?php
         foreach ($this->artist_links as $key => $value) {
+//            var_dump($this->artist_links);
+//            die;
             echo '<li><a href="/welcome/artist/' . $value['url'] . '" >';
             echo '<div class="artistMain"><img otherImage="' . $value['header_hover_text'] . '" mainImage="' . $value['header_text_url'] . '" src="/assets/artists_header_text/' . $value['header_text_url'] . '" /></div>';
             echo '</a></li>';
