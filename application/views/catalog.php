@@ -57,7 +57,8 @@
     }
     .loadingModal img{
         width: 97px;
-        left: 50%;
+        left: 48%;
+        position: relative;
     }
 </style>
 <div id="main">
