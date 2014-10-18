@@ -49,6 +49,16 @@
         font-weight:100;
         /*padding:10px;*/
     }
+    .loadingModal{
+        /*left: 50%;*/
+        position: relative;
+        /*top: 50%;*/
+        width:100%;
+    }
+    .loadingModal img{
+        width: 97px;
+        left: 50%;
+    }
 </style>
 <div id="main">
     <span class="text-catalog">CATALOG</span>
@@ -105,8 +115,10 @@
         <li><a href="#"><img src="images/img53.jpg" width="101" height="100" alt="image description"></a></li>
         <li><a href="#"><img src="images/img54.jpg" width="100" height="100" alt="image description"></a></li>-->
     </ul>
+    <div id="loadingModal" class="loadingModal" ><img src="/assets/images/rawtapes_loader.gif" /></div>
 </div>
-<div id="loadingModal" style="width:100%;height:200px;text-align:center;top:100px;position:relative;"><img src="/assets/images/smallajaxloader.gif" /></div>
+<!--<div id="loadingModal" class="loadingModal" style="width:100%;height:200px;text-align:center;top:100px;position:relative;"><img src="/assets/images/smallajaxloader.gif" /></div>-->
+<!--<div id="loadingModal" class="loadingModal" ><img src="/assets/images/smallajaxloader.gif" /></div>-->
 <script type="text/javascript">
     console.log('asdasd');
     console.log($('img'));
@@ -115,11 +127,11 @@
         function(){
             $(this).attr('src','/assets/artists_hover_text/'+$(this).attr('otherimage'));
         }
-         ,
-         function(){
-             $(this).attr('src','/assets/artists_header_text/'+$(this).attr('mainimage'));
-         }
-        );
+        ,
+        function(){
+            $(this).attr('src','/assets/artists_header_text/'+$(this).attr('mainimage'));
+        }
+    );
         $('#loadingModal').toggle();
         $('ul.product').fadeIn('slower',function(){
             
